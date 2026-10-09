@@ -9,7 +9,7 @@ This subsection points to the dynamic FEA-sequence baseline on EmoHeVRDB-DFEA.
 - Classification report: <https://github.com/thorbenortmann/emohevrdb-dfer/blob/3993b6813443e75eff8f380e9d4c1b1d6810221c/5_dynamic_facial_expression_recognition/5_2_fea/classification_report.txt>
 - Confusion matrix: <https://github.com/thorbenortmann/emohevrdb-dfer/blob/3993b6813443e75eff8f380e9d4c1b1d6810221c/5_dynamic_facial_expression_recognition/5_2_fea/confusion_matrix.png>
 - Training history: <https://github.com/thorbenortmann/emohevrdb-dfer/blob/3993b6813443e75eff8f380e9d4c1b1d6810221c/5_dynamic_facial_expression_recognition/5_2_fea/training_history.png>
-- Model: <https://drive.google.com/file/d/16vcD4SpQOyqDomiMzXUgq8GjBWGX8buK/view?usp=sharing>
+- Model: <https://drive.google.com/file/d/19mTZPnM31N70cwycBfKGOsrvAMYTWyUD/view?usp=sharing>
 
 ## Dataset Reference
 
