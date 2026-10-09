@@ -12,4 +12,7 @@ This section documents code, reports, and model references for dynamic FER with 
 ## Main Repository
 
 - Dynamic FER repository: <https://github.com/thorbenortmann/emohevrdb-dfer>
-- Dynamic FER experiment folder: <https://github.com/thorbenortmann/emohevrdb-dfer/tree/main/6_dynamic_facial_expression_recognition>
+- Dynamic FER experiments folder: <https://github.com/thorbenortmann/emohevrdb-dfer/tree/3993b6813443e75eff8f380e9d4c1b1d6810221c/5_dynamic_facial_expression_recognition>
+
+## Confusion Matrices
+The thesis' dynamic confusion matrices are plotted via [dynamic_confusion_matrices.ipynb](dynamic_confusion_matrices.ipynb) in the [confusion_matrices](./confusion_matrices/) folder. 
