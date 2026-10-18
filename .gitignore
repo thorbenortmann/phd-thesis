@@ -1,6 +1,7 @@
 # Jupyter Notebook files
 .ipynb_checkpoints/
 checkpoint_*.ipynb
+.Trash-*/
 
 # Python bytecode and cache
 __pycache__/
