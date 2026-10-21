@@ -5,7 +5,7 @@ This repository accompanies the PhD thesis:
 **Facial Expression Recognition in Virtual Reality under Partial Occlusion by Head-Mounted Displays**  
 by Thorben Ortmann  
 University of the West of Scotland / Hamburg University of Applied Sciences  
-13th May 2026 (current draft)
+21st October 2026
 
 The thesis revises, extends, synthesises, and integrates the work of several publications into a single narrative.
 This repository serves as a central entry point for accompanying material, particularly code and models, and mirrors the relevant structure of the PhD thesis.

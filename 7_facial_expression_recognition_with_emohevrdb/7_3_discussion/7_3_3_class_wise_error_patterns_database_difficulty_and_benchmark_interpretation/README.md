@@ -9,5 +9,5 @@ This subsection draws on classification reports, confusion matrices, and complem
 - EmoHeVRDB subset documentation: <https://github.com/thorbenortmann/emoji-hero-vr-database/tree/main#emohevrdb-subsets-and-structure>
 
 ## Summed Confusion Matrices
-The central and side-view comparison figure originates from the following notebook inside this repository: [prediction_comparison.ipynb](prediction_comparison.ipynb).
-The summed confusion matrices are plotted via [summed_confusion_matrices.ipynb](summed_confusion_matrices.ipynb). 
+
+The summed confusion matrices are plotted via [summed_confusion_matrices.ipynb](summed_confusion_matrices.ipynb).

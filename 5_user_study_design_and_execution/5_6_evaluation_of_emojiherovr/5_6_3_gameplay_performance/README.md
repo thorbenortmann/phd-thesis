@@ -2,7 +2,7 @@
 
 `gameplay_performance.ipynb` examines recognition success and possible adaptation
 to the in-game FER model. It supports thesis Section 5.6.3 and the discussion of
-recognition-related sampling limitations in Sections 6.1.1 and 8.3.
+recognition-related sampling limitations in Sections 6.1 and 8.3.
 
 ## Run with Docker
 
