@@ -1,26 +1,8 @@
-Sections to modify:
-5.
-5.6 Evaluation of EmojiHeroVR
-5.6.3 Gameplay Performance and Learning Effectss
+# 5.6.3 Gameplay Performance and Learning Effects
 
-6.1 Data Annotation and Filtering
-6.1.1 Selection of Annotation Candidates
-
-8.3 Limitations and Conditions of Interpretation
-
-
-
-# 5.6.3 Gameplay Performance
-
-Analyse the reconstructed EmojiHeroVR gameplay logs for the thesis minor correction
-concerning possible adaptation to the in-game FER model.
-
-`gameplay_performance.ipynb` is the complete analysis. It counts an emoji as
-successful when at least one logged FER prediction matches its prompted category.
-Each emoji contributes one binary outcome; predictions are not treated as separate
-reenactment outcomes. This is an operational measure of recognition success,
-not independent verification of expression quality or an exact reconstruction of
-the timing of awarded game points.
+`gameplay_performance.ipynb` examines recognition success and possible adaptation
+to the in-game FER model. It supports thesis Section 5.6.3 and the discussion of
+recognition-related sampling limitations in Sections 6.1.1 and 8.3.
 
 ## Run with Docker
 
@@ -30,73 +12,57 @@ From this directory, run:
 docker compose up --build
 ```
 
-Open `http://localhost:8888/lab` and use the token printed by Jupyter in the terminal.
-Open `gameplay_performance.ipynb`, then select **Kernel > Restart Kernel and Run All Cells**.
-The directory is mounted into the container, so notebook changes and exports persist.
-Stop with Ctrl+C, then run `docker compose down` to remove the stopped container.
+Open <http://localhost:8888/lab> using the token printed in the terminal.
+Open `gameplay_performance.ipynb` and select **Kernel > Restart Kernel and Run All Cells**.
+The image provides Python and the packages specified in `requirements.txt`.
+The current directory is mounted into the container, so notebook changes and
+exports persist. The server is token-protected and accessible through localhost.
 
-The image uses Python **3.14.8**, a maintained Python release, on Debian slim.
-The base image digest and every Python dependency are pinned. JupyterLab, pandas,
-NumPy and Matplotlib are the main packages. Installation uses binary wheels;
-no GPU runtime, compilers or additional analysis services are required.
-The server remains token-protected and its published port is bound to localhost.
+To stop, press Ctrl+C, then run `docker compose down`.
 
-The container runs as user ID 1000. On Linux, a host account with a different user
-ID may need ownership/permissions adjusted on this directory for notebook saving.
+## Input and analysis
 
-## Run in an existing Python environment
+Place `gameplay-logs.csv` alongside the notebook. Each row contains one logged
+FER prediction. Predictions are grouped by participant, level and emoji ID;
+a reenactment succeeds if at least one prediction matches the target category.
+This measures recognition success, not independently verified expression quality
+or the timing of awarded game points.
 
-Use Python 3.14 and install the same pinned requirements:
+The 37 participants completed 70 reenactments each: ten per expression category.
+The notebook shows session performance, category-specific curves and their
+equally weighted average. It compares reenactments 1–3 with 8–10 and 1–5 with
+6–10, including participant-level summaries and level context.
 
-```bash
-python -m pip install -r requirements.txt
-jupyter lab
-```
+## Optional exports
 
-For headless execution from this directory:
+Figures and tables are always displayed in the notebook. All exports are
+disabled by default. Enable the required flags in **Setup**, then rerun all cells:
 
-```bash
-jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=180 gameplay_performance.ipynb
-```
+| Flag | Output |
+| --- | --- |
+| `EXPORT_PDF` | Vector figures in `figures/` for LaTeX. |
+| `EXPORT_PNG` | Figures in `figures/` at 300 dpi. |
+| `EXPORT_CSV` | Aggregate tables in `results/`. |
+| `EXPORT_METADATA` | Input hashes, package versions and validation counts in `results/analysis_metadata.json`. |
 
-## Input and outputs
+Figure filenames are `gameplay_success_session.pdf` or `.png` and
+`gameplay_success_<expression>.pdf` or `.png`, with lowercase category names
+and `average`. The eight category/average panels are designed for four rows
+and two columns in LaTeX; only the final two panels have x-axis labels.
 
-The supplied CSV is in `data/gameplay-logs.csv`. If using the repository without the
-local analysis package, supply that file first; see `data/README.md`.
-Input CSV files are ignored by Git, and the Docker build context includes only
-the Dockerfile and requirements.
+CSV exports include `success_by_presentation.csv`,
+`success_rates_by_reenactment.csv`, expression and participant summaries,
+`success_by_level.csv`, and environment and validation tables.
+All paths are relative to the notebook directory. Output directories are
+created only when the corresponding exports are enabled.
 
-The notebook creates:
+## Interpretation
 
-- `figures/gameplay_success_by_expression.pdf` and `.png`: the seven-panel figure.
-- `figures/gameplay_success_<expression>.pdf`: seven separate category figures.
-- `results/success_by_presentation.csv`: the values in the plots, with numerators and denominators.
-- `results/success_by_expression.csv`: category totals and descriptive first-three versus last-three comparisons.
-- `results/success_by_level.csv`: level totals and prediction-count context.
-- `results/analysis_metadata.json`: input fingerprint, data-quality counts and installed versions.
+The analysis is descriptive; no significance tests are performed. Changing
+difficulty and recognition opportunities, fixed ordering, prior familiarisation
+and ceiling effects limit conclusions about learning. Recording-window durations
+in the level summary come from thesis Section 5.7, not prediction timestamps.
 
-Only aggregate results are displayed or exported. The full reenactment-level table
-remains an in-memory notebook object.
-
-## Scope and interpretation
-
-Each of the 37 participants completed 70 emojis: ten per expression category.
-The seven curves show success for successive presentations within each category.
-Dashed lines separate the first three presentations (Level 1 or 2, depending on
-category), the next three (Level 3), and the final four (Level 4).
-
-This is a descriptive inspection of within-session performance. No significance
-tests, regression models, smoothing or per-prediction learning analyses are used.
-The first-three versus last-three comparison summarises the curves and is not
-an estimate of a learning effect isolated from changing game difficulty.
-
-Later levels have shorter recording windows and fewer recognition opportunities,
-particularly Level 4. Performance is also affected by fixed ordering, prior
-familiarisation and ceiling effects. The notebook retains unsuccessful emojis,
-counts invalid requests as non-matching, and does not use timestamps to order
-reenactments. It verifies the supplied success flags against the logged classes.
-No clear improvement would not establish the absence of adaptation, and manual
-annotation cannot recover expression variants participants never produced.
-
-The recorded window durations quoted in the notebook are contextual values from
-thesis Section 5.7; they are not inferred from prediction timestamps.
+A lack of consistent improvement does not rule out adaptation. Recognition-based
+rewards may discourage difficult-to-recognise expression variants; manual
+annotation cannot recover variants that participants never produced.
