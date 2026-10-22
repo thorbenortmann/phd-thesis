@@ -1,0 +1,24 @@
+# Jupyter Notebook files
+.ipynb_checkpoints/
+checkpoint_*.ipynb
+.Trash-*/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (highly recommended to ignore)
+.venv/
+venv/
+env/
+ENV/
+
+# Data and large files (prevent committing heavy datasets)
+# *.csv
+# *.json
+*.xlsx
+*.sqlite
+
+# Local configuration and secrets
+.env

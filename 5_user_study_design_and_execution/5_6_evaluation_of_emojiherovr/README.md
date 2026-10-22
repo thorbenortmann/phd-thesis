@@ -6,6 +6,7 @@ This section documents where the repository context for the EmojiHeroVR evaluati
 
 - [5.6.1 Game Experience Questionnaire](5_6_1_game_experience_questionnaire)
 - [5.6.2 Virtual Reality Sickness Questionnaire](5_6_2_virtual_reality_sickness_questionnaire)
+- [5.6.3 Gameplay Performance and Learning](5_6_3_gameplay_performance)
 
 ## References
 

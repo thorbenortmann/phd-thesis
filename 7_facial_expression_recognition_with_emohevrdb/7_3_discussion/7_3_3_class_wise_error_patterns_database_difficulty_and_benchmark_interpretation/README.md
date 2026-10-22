@@ -7,3 +7,7 @@ This subsection draws on classification reports, confusion matrices, and complem
 - [Static FER section](../../7_1_static_facial_expression_recognition)
 - [Dynamic FER section](../../7_2_dynamic_facial_expression_recognition)
 - EmoHeVRDB subset documentation: <https://github.com/thorbenortmann/emoji-hero-vr-database/tree/main#emohevrdb-subsets-and-structure>
+
+## Summed Confusion Matrices
+
+The summed confusion matrices are plotted via [summed_confusion_matrices.ipynb](summed_confusion_matrices.ipynb).

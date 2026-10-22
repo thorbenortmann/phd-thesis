@@ -10,6 +10,10 @@ This chapter documents the static and dynamic FER experiment material for EmoHeV
 
 ## Main Repositories
 
-- EmoHeVRDB: <https://github.com/thorbenortmann/emoji-hero-vr-database/tree/main>
-- Static FER: <https://github.com/thorbenortmann/emohevrdb-sfer/tree/main>
+- EmoHeVRDB: <https://github.com/thorbenortmann/emoji-hero-vr-database>
+- Static FER: <https://github.com/thorbenortmann/emohevrdb-sfer>
 - Dynamic FER: <https://github.com/thorbenortmann/emohevrdb-dfer>
+
+## Model Architecture Figures
+The thesis' model architecture figures are drawn via draw.io;
+see [model-architectures.drawio](model-architectures/model-architectures.drawio) and the PDFs in the [model-architectures](./model-architectures/) folder. 
