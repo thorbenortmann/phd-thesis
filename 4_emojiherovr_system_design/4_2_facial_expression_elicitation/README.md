@@ -11,4 +11,4 @@ This section points to the EmojiHeroVR game material used for the facial-express
 
 ## Notes
 
-EmojiHeroVR uses OpenMoji assets for the emoji stimuli. The corresponding attribution and licence notes are documented in the EmojiHeroVR repository README.
+EmojiHeroVR uses OpenMoji assets for the emoji stimuli. The corresponding attribution and license notes are documented in the EmojiHeroVR repository README.
